@@ -12,10 +12,18 @@ zenra-ize some text.
 
 == SYNOPSIS:
 
-require 'zenra'
-z '合コンに参加する。'
+ require 'zenra'
+ Zenra.app_id = "#{your_yahoo_api_application_id}" 
+ # (or set environment valiable `YAHOO_APPID`)
 
+ Zenra.new.zenrize '合コンに参加する。'
  # => '合コンに全裸で参加する。'
+
+ Zenra.new.zenrize 'お腹が空いたのでスパゲッティが食べたい', :pos => '名詞', :add => '夜の'
+ # => '夜のお腹が空いたので夜のスパゲッティが食べたい'
+
+ z '焼肉を食べて酒を飲んだ。'
+ # => '焼肉を全裸で食べて酒を全裸で飲んだ。'
 
 == REQUIREMENTS:
 
@@ -24,6 +32,19 @@ z '合コンに参加する。'
 == INSTALL:
 
 * gem install zenra
+
+== DEVELOPPERS:
+
+* If you want to run specs
+
+ cp spec/account.rb.sample spec/account.rb
+
+and write your Yahoo! API application id into spec/account.rb
+
+== THANKS AND RESPECT TO:
+
+* Earier Developer `yohfee`
+ https://gist.github.com/713759
 
 == LICENSE:
 
